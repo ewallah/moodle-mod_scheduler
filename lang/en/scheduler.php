@@ -8,6 +8,29 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$string['privacy:metadata:scheduler_slot:teacherid'] = 'Teacher id';
+$string['privacy:metadata:scheduler_slot:schedulerid'] = 'Scheduler id';
+$string['privacy:metadata:scheduler_slot:starttime'] = 'Start time';
+$string['privacy:metadata:scheduler_slot:duration'] = 'Duration';
+$string['privacy:metadata:scheduler_slot:appointmentlocation'] = 'Appointment location';
+$string['privacy:metadata:scheduler_slot:reuse'] = 'Reuse (legacy)';
+$string['privacy:metadata:scheduler_slot:timemodified'] = 'Time modified';
+$string['privacy:metadata:scheduler_slot:notes'] = 'Notes';
+$string['privacy:metadata:scheduler_slot:exclusivity'] = 'Exclusive';
+$string['privacy:metadata:scheduler_slot:emaildate'] = 'Email date';
+$string['privacy:metadata:scheduler_slot:hideuntil'] = 'Hide until';
+$string['privacy:metadata:scheduler_slots'] = 'Scheduler slots';
+$string['privacy:metadata:scheduler_appointment:studentid'] = 'Student id';
+$string['privacy:metadata:scheduler_appointment:slotid'] = 'Slot id';
+$string['privacy:metadata:scheduler_appointment:attended'] = 'Attended';
+$string['privacy:metadata:scheduler_appointment:grade'] = 'Grade';
+$string['privacy:metadata:scheduler_appointment:appointmentnote'] = 'Appointment note';
+$string['privacy:metadata:scheduler_appointment:teachernote'] = 'Teacher note';
+$string['privacy:metadata:scheduler_appointment:studentnote'] = 'Student note';
+$string['privacy:metadata:scheduler_appointment:timecreated'] = 'Time created';
+$string['privacy:metadata:scheduler_appointment:timemodified'] = 'Time modified';
+$string['privacy:metadata:scheduler_appointment'] = 'Scheduler appointment';
+
 $string['pluginname'] = 'Scheduler';
 $string['pluginadministration'] = 'Scheduler administration';
 $string['modulename'] = 'Scheduler';
