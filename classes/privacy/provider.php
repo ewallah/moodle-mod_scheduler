@@ -70,8 +70,8 @@ class provider implements \core_privacy\local\metadata\provider, \core_privacy\l
                 'studentnote' => 'privacy:metadata:scheduler_appointment:studentnote',
                 'timecreated' => 'privacy:metadata:scheduler_appointment:timecreated',
                 'timemodified' => 'privacy:metadata:scheduler_appointment:timemodified'];
-       $collection->add_database_table('scheduler_appointment', $arr, 'privacy:metadata:scheduler_appointment');
-       return $collection;
+        $collection->add_database_table('scheduler_appointment', $arr, 'privacy:metadata:scheduler_appointment');
+        return $collection;
     }
 
     /**

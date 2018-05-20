@@ -62,9 +62,8 @@ class mod_scheduler_privacy_provider_testcase extends \core_privacy\tests\provid
         $course = $generator->create_course();
         $student = $generator->create_user();
         $teacher = $generator->create_user();
-        $teacherrole = $DB->get_record('role', ['shortname'=>'editingteacher'], '*', MUST_EXIST);
+        $teacherrole = $DB->get_record('role', ['shortname' => 'editingteacher'], '*', MUST_EXIST);
         role_assign($teacherrole->id, $teacher->id, context_course::instance($course->id));
-        
         $plugingenerator = $generator->get_plugin_generator('mod_scheduler');
         $options = [];
         $options['slottimes'] = [];
