@@ -46,7 +46,6 @@ before_install:
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist blackboard-open-source/moodle-plugin-ci ci ^2
   - composer require --dev dmore/behat-chrome-extension
-  - composer require --dev dmore/chrome-mink-driver
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://127.0.0.1 &
 
@@ -54,8 +53,8 @@ install:
   - moodle-plugin-ci install
 
 script:
-  - vendor/bin/phpunit "provider_testcase" privacy/tests/provider_test.php
-  - moodle-plugin-ci phplint
+  - phpdbg -rr ci/vendor/bin/phpunit "provider_testcase" privacy/tests/provider_test.php --colors="always"
+  - moodle-plugin-ci phplint vendor/bin/
   - moodle-plugin-ci phpcpd
   - moodle-plugin-ci phpmd
   - moodle-plugin-ci phpdoc
@@ -65,5 +64,6 @@ script:
   - moodle-plugin-ci mustache
   - moodle-plugin-ci grunt
   - moodle-plugin-ci phpunit
-  - moodle-plugin-ci behat
   - moodle-plugin-ci behat --profile chrome
+  - moodle-plugin-ci behat
+  
