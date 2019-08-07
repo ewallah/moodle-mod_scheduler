@@ -7,7 +7,7 @@ Feature: Booking of appointments with individual tutors per group
   Background:
     Given the following "users" exist:
       | username  | firstname   | lastname | email                 |
-      | manager1  | Manager     | 1        | manager1@example.com  | 
+      | manager1  | Manager     | 1        | manager1@example.com  |
       | coor1     | Coordinator | 1        | coor1@example.com     |
       | tutor2    | Tutor       | 2        | tutor2@example.com    |
       | tutor3    | Tutor       | 3        | tutor3@example.com    |
@@ -21,7 +21,7 @@ Feature: Booking of appointments with individual tutors per group
       | fullname | shortname | category |
       | Course 1 | C1 | 0 |
     And the following "course enrolments" exist:
-      | user  | course | role           |  
+      | user  | course | role           |
       | coor1     | C1 | editingteacher |
       | tutor2    | C1 | teacher        |
       | tutor3    | C1 | teacher        |
@@ -69,9 +69,9 @@ Feature: Booking of appointments with individual tutors per group
     And I should see "Student 2a" in the "studentstoschedule" "table"
     And I should see "Student 2b" in the "studentstoschedule" "table"
     And I log out
-           
+
     When I log in as "student2a"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should see "1:00 AM" in the "slotbookertable" "table"
     And I should see "10:00 AM" in the "slotbookertable" "table"
@@ -79,20 +79,20 @@ Feature: Booking of appointments with individual tutors per group
     Then "Cancel booking" "button" should exist
     And I should see "Meeting with your Teacher, Tutor 2" in the "Upcoming events" "block"
     And I log out
-    
+
     When I log in as "student2b"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should see "1:00 AM" in the "slotbookertable" "table"
     And I should not see "2:00 AM" in the "slotbookertable" "table"
     And I should see "10:00 AM" in the "slotbookertable" "table"
-    When I click on "Book slot" "button" in the "5:00 AM" "table_row" 
+    When I click on "Book slot" "button" in the "5:00 AM" "table_row"
     Then "Cancel booking" "button" should exist
     And I should see "Meeting with your Teacher, Tutor 2" in the "Upcoming events" "block"
     And I log out
-    
+
     When I log in as "tutor2"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should see "1:00 AM" in the "slotmanager" "table"
     And I should see "Student 2a" in the "2:00 AM" "table_row"
@@ -136,7 +136,7 @@ Feature: Booking of appointments with individual tutors per group
     And I log out
 
     When I log in as "student1a"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should see "1:00 AM" in the "slotbookertable" "table"
     And I should see "10:00 AM" in the "slotbookertable" "table"
@@ -149,7 +149,7 @@ Feature: Booking of appointments with individual tutors per group
     And I log out
 
     When I log in as "student2a"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should see "1:00 AM" in the "slotbookertable" "table"
     And I should see "10:00 AM" in the "slotbookertable" "table"
@@ -160,9 +160,9 @@ Feature: Booking of appointments with individual tutors per group
     Then "Cancel booking" "button" should exist
     And I should see "Meeting with your Teacher, Tutor 2" in the "Upcoming events" "block"
     And I log out
-    
+
     When I log in as "coor1"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should see "Student 1a" in the "slotmanager" "table"
     And I should not see "Student 1b" in the "slotmanager" "table"
@@ -173,11 +173,11 @@ Feature: Booking of appointments with individual tutors per group
     When I follow "All appointments"
     Then I should see "Student 1a" in the "slotmanager" "table"
     And I should not see "Student 1b" in the "slotmanager" "table"
-    And I should see "Student 2a" in the "slotmanager" "table"    
+    And I should see "Student 2a" in the "slotmanager" "table"
     And I log out
-    
+
     When I log in as "tutor2"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should not see "Student 1a" in the "slotmanager" "table"
     And I should not see "Student 1b" in the "slotmanager" "table"
@@ -188,11 +188,11 @@ Feature: Booking of appointments with individual tutors per group
     When I follow "All appointments"
     Then I should not see "Student 1a" in the "slotmanager" "table"
     And I should not see "Student 1b" in the "slotmanager" "table"
-    And I should see "Student 2a" in the "slotmanager" "table"    
+    And I should see "Student 2a" in the "slotmanager" "table"
     And I log out
-    
+
     When I log in as "tutor3"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     Then I should not see "Student 1a" in the "slotmanager" "table"
     And I should not see "Student 1b" in the "slotmanager" "table"
@@ -200,15 +200,15 @@ Feature: Booking of appointments with individual tutors per group
     When I follow "All appointments"
     Then I should not see "Student 1a" in the "slotmanager" "table"
     And I should not see "Student 1b" in the "slotmanager" "table"
-    And I should not see "Student 2a" in the "slotmanager" "table"    
+    And I should not see "Student 2a" in the "slotmanager" "table"
     And I log out
-    
+
     When I log in as "manager1"
     And I follow "Site home"
     And I navigate to "Turn editing on" in current page administration
     And I add the "Navigation" block if not present
     And I click on "Courses" "link" in the "Navigation" "block"
-    And I am on "Course 1" course homepage    
+    And I am on "Course 1" course homepage
     And I follow "Tutor sessions"
     And I follow "Statistics"
     And I follow "My appointments"
@@ -217,6 +217,5 @@ Feature: Booking of appointments with individual tutors per group
     When I follow "All appointments"
     Then I should see "Student 1a" in the "slotmanager" "table"
     And I should not see "Student 1b" in the "slotmanager" "table"
-    And I should see "Student 2a" in the "slotmanager" "table"    
+    And I should see "Student 2a" in the "slotmanager" "table"
     And I log out
-    

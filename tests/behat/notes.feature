@@ -26,7 +26,7 @@ Feature: Teachers can write notes on slots and appointments
     And I add 5 slots 10 days ahead in "Test scheduler" scheduler and I fill the form with:
       | Location  | Here |
     And I log out
-    
+
   @javascript
   Scenario: Teachers can enter slot notes and appointment notes for others to see
     When I log in as "edteacher1"
@@ -50,7 +50,7 @@ Feature: Teachers can write notes on slots and appointments
     When I click on "Book slot" "button" in the "4:00 AM" "table_row"
     Then I should see "Note-for-slot"
     And I log out
-    
+
     When I log in as "edteacher1"
     And I am on "Course 1" course homepage
     And I follow "Test scheduler"
@@ -68,7 +68,7 @@ Feature: Teachers can write notes on slots and appointments
     Then I should see "note-for-appointment"
     And I should see "note-confidential"
     And I log out
-        
+
     When I log in as "student1"
     And I am on "Course 1" course homepage
     And I follow "Test scheduler"
@@ -76,7 +76,7 @@ Feature: Teachers can write notes on slots and appointments
     And I should see "note-for-appointment"
     And I should not see "note-confidential"
     And I log out
-    
+
   @javascript
   Scenario: Teachers see only the comments fields specified in the configuration
 
@@ -86,7 +86,7 @@ Feature: Teachers can write notes on slots and appointments
     And I click on "Book slot" "button" in the "4:00 AM" "table_row"
     Then I should see "Upcoming slots"
     And I log out
-    
+
     When I log in as "edteacher1"
     And I am on "Course 1" course homepage
     And I follow "Test scheduler"
@@ -139,7 +139,7 @@ Feature: Teachers can write notes on slots and appointments
     Then I should see "note-for-appointment"
     And I should not see "note-confidential"
     And I log out
-    
+
     When I log in as "edteacher1"
     And I am on "Course 1" course homepage
     And I follow "Test scheduler"

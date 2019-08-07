@@ -41,7 +41,7 @@ Feature: Teacher can add slots to a scheduler activity
     And I click on "Save changes" "button"
     Then I should see "1 slot added"
     And I should see "Friday, 1 April 2050"
-    
+
   @javascript
   Scenario: Teacher enters invalid values when adding a slot
     When I log in as "teacher1"
@@ -98,7 +98,6 @@ Feature: Teacher can add slots to a scheduler activity
     And I should see "Student 1"
     And I should see "Student 2"
     And I should see "Student 3"
-
 
   @javascript
   Scenario: Teacher creates 10 slots at once
