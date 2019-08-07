@@ -43,7 +43,7 @@ install:
   - moodle-plugin-ci install -vv
 
 script:
-  - /home/travis/build/moodle/vendor/bin/phpunit "provider_testcase" privacy/tests/provider_test.php
+  - /home/travis/build/moodle/vendor/bin/phpunit "provider_testcase" /home/travis/build/moodle/privacy/tests/provider_test.php
   #- moodle-plugin-ci phplint vendor/bin/
   #- moodle-plugin-ci phpcpd
   #- moodle-plugin-ci phpmd
