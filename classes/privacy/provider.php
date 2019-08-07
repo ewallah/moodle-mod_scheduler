@@ -49,8 +49,9 @@ class provider implements
         \core_privacy\local\request\core_userlist_provider,
 
         // This plugin is a core_user_data_provider.
-        \core_privacy\local\request\plugin\provider {
+        \core_privacy\local\request\plugin\provider,
 
+        \core_privacy\local\request\core_userlist_provider {
 
     private static $renderer;
 
