@@ -10,6 +10,7 @@ addons:
   firefox: "47.0.1"
   postgresql: "9.6"
   chrome: stable
+  mariadb: '10.0'
   apt:
     packages:
       - openjdk-8-jre-headless
@@ -28,17 +29,6 @@ env:
   - DB=mysqli MOODLE_BRANCH=master
   - DB=mariadb MOODLE_BRANCH=master
 
-matrix:
-  include:
-    - php: 7.1
-      env: DB=pgsql MOODLE_BRANCH=MOODLE_35_STABLE
-    - php: 7.2
-      env: DB=pgsql MOODLE_BRANCH=MOODLE_36_STABLE
-    - php: 7.3
-      env: DB=pgsql MOODLE_BRANCH=MOODLE_37_STABLE
-    - php: 7.3
-      env: DB=pgsql MOODLE_BRANCH=master
-  
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm install 8.9
@@ -53,7 +43,7 @@ install:
   - moodle-plugin-ci install
 
 script:
-  - phpdbg -rr ci/vendor/bin/phpunit "provider_testcase" privacy/tests/provider_test.php --colors="always"
+  - phpunit "provider_testcase" privacy/tests/provider_test.php --colors="always"
   - moodle-plugin-ci phplint vendor/bin/
   - moodle-plugin-ci phpcpd
   - moodle-plugin-ci phpmd
