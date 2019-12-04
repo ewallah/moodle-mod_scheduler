@@ -7,7 +7,6 @@ services:
   - mysql
 
 addons:
-  firefox: "47.0.1"
   postgresql: "9.6"
   chrome: stable
   apt:
@@ -48,15 +47,6 @@ install:
   - moodle-plugin-ci install
 
 script:
-  - moodle-plugin-ci phplint || true
-  - moodle-plugin-ci phpcpd || true
-  - moodle-plugin-ci phpmd || true
-  - moodle-plugin-ci phpdoc || true
-  - moodle-plugin-ci codechecker || true
-  - moodle-plugin-ci validate || true
-  - moodle-plugin-ci savepoints || true
-  - moodle-plugin-ci mustache || true
-  - moodle-plugin-ci grunt || true
-  - moodle-plugin-ci phpunit --coverage-text --coverage-clover
   - moodle-plugin-ci behat --profile chrome
+  - moodle-plugin-ci phpunit --coverage-text
   
