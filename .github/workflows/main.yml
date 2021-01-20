@@ -67,7 +67,7 @@ jobs:
         working-directory: ci
 
       - name: install Moodle
-        run: moodle-plugin-ci install -v --db-host=127.0.0.1 --plugin this-plugin --no-init
+        run: moodle-plugin-ci install -v --db-host=127.0.0.1 --plugin this-plugin
         env:
           DB: ${{ matrix.database }}
           MOODLE_BRANCH: ${{ matrix.moodle-branch }}
@@ -76,22 +76,22 @@ jobs:
         run: moodle-plugin-ci phplint
 
       - name: phpcpd
-        run: moodle-plugin-ci phpcpd
+        run: moodle-plugin-ci phpcpd || true
 
       - name: phpmd
-        run: moodle-plugin-ci phpmd
+        run: moodle-plugin-ci phpmd || true
 
       - name: codechecker
-        run: moodle-plugin-ci codechecker
+        run: moodle-plugin-ci codechecker || true
 
       - name: validate
-        run: moodle-plugin-ci validate
+        run: moodle-plugin-ci validate || true
 
       - name: savepoints
-        run: moodle-plugin-ci savepoints
+        run: moodle-plugin-ci savepoints || true
 
       - name: mustache
-        run: moodle-plugin-ci mustache
+        run: moodle-plugin-ci mustache || true
 
       - name: grunt
         run: moodle-plugin-ci grunt || true
