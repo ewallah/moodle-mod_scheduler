@@ -92,9 +92,9 @@ class scheduler_messenger {
      * @param int $isnotification
      *            1 for notifications, 0 for personal messages
      * @param stdClass $sender
-     *            A {@link $USER} object describing the sender
+     *            A $USER object describing the sender
      * @param stdClass $recipient
-     *            A {@link $USER} object describing the recipient
+     *            A $USER object describing the recipient
      * @param object $course
      *            The course that the activity is in. Can be null.
      * @param string $template
@@ -151,10 +151,10 @@ class scheduler_messenger {
      *
      * @param scheduler $scheduler The scheduler instance
      * @param slot $slot The slot data as an MVC object, may be null
-     * @param user $teacher A {@link $USER} object describing the attendant (teacher)
-     * @param user $student A {@link $USER} object describing the attendee (student)
+     * @param user $teacher A $USER object describing the attendant (teacher)
+     * @param user $student A $USER object describing the attendee (student)
      * @param object $course A course object relating to the ontext of the message
-     * @param object $recipient A {@link $USER} object describing the recipient of the message
+     * @param object $recipient A $USER object describing the recipient of the message
      *                          (used for determining the message language)
      * @return array A hash with mail template substitutions
      */

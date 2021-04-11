@@ -90,7 +90,8 @@ class mod_scheduler_generator extends testing_module_generator {
                 $slot->schedulerid = $id;
                 $slot->starttime = $time;
                 $slot->duration = 10;
-                $slot->teacherid = isset($options['slotteachers'][$slotkey]) ? $options['slotteachers'][$slotkey] : 2; // Admin user as default.
+                 // Admin user as default.
+                $slot->teacherid = isset($options['slotteachers'][$slotkey]) ? $options['slotteachers'][$slotkey] : 2;
                 $slot->appointmentlocation = 'Test Loc';
                 $slot->timemodified = time();
                 $slot->notes = '';

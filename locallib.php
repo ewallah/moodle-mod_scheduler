@@ -64,8 +64,8 @@ function scheduler_delete_calendar_events($slot) {
  *
  * @uses $CFG
  * @uses $USER
- * @param user $user A {@link $USER} object representing a user
- * @param course $course A {@link $COURSE} object representing a course
+ * @param user $user A $USER object representing a user
+ * @param course $course A $COURSE object representing a course
  * @param bool $messageselect whether to include a checkbox to select the user
  * @param bool $return whether the HTML fragment is to be returned as a string (otherwise printed)
  * @return string HTML fragment, if so selected
