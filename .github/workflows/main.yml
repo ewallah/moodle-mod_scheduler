@@ -28,8 +28,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        moodle-branch: ['MOODLE_39_STABLE']
-        php: ['7.3']
+        moodle-branch: ['master', 'MOODLE_311_STABLE', 'MOODLE_310_STABLE']
+        php: ['7.4']
         database: ['mariadb', 'pgsql']
 
     name: ${{ matrix.moodle-branch }}  php ${{ matrix.php }}  ${{ matrix.database }}
@@ -39,11 +39,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: this-plugin
-
-      - name: install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.15.0'
 
       - name: setup PHP
         uses: shivammathur/setup-php@v2
@@ -63,7 +58,6 @@ jobs:
            echo "$(cd bin; pwd)" >> $GITHUB_PATH
            echo "$(cd vendor/bin; pwd)" >> $GITHUB_PATH
            sudo locale-gen en_AU.UTF-8
-           sudo apt install sshpass
         working-directory: ci
 
       - name: install Moodle
