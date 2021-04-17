@@ -150,7 +150,7 @@ class mod_scheduler_privacy_testcase extends provider_testcase {
 
         // Get contexts for the first user.
         $contextids = provider::get_contexts_for_userid($this->student1->id)->get_contextids();
-        $this->assertEquals([$this->context->id], $contextids, '', 0.0, 10, true);
+        $this->assertEqualsCanonicalizing([$this->context->id], $contextids, '', 0.0, 10, true);
     }
 
     /**
