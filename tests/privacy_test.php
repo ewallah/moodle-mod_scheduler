@@ -83,7 +83,7 @@ class mod_scheduler_privacy_testcase extends provider_testcase {
      */
     protected $allstudents;
 
-    protected function setUp():void {
+    protected function setUp(): void {
         global $DB, $CFG;
 
         $this->resetAfterTest(true);
