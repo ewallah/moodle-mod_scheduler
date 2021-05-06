@@ -39,7 +39,7 @@ abstract class mvc_model_factory {
      *
      * @return mvc_model
      */
-    public abstract function create();
+    abstract public function create();
 
     /**
      * Create a new record by loading it from the database.
