@@ -75,6 +75,9 @@ jobs:
       - name: phpmd
         run: moodle-plugin-ci phpmd || true
 
+      - name: phpdoc
+        run: moodle-plugin-ci phpdoc || true
+
       - name: codechecker
         run: moodle-plugin-ci codechecker || true
 
