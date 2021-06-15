@@ -643,7 +643,7 @@ if ($students === 0) {
             if ((int)$CFG->branch > 310) {
                  $fields = \core_user\fields::for_userpic()->get_sql('u', false, '', '', false)->selects;
             } else {
-                 $fields = \user_picture::fields('');
+                 $fields = \user_picture::fields('u');
             }
 
             foreach ($groupsicanschedule as $group) {
