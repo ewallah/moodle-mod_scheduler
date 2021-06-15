@@ -640,8 +640,14 @@ if ($students === 0) {
             $grouptable->id = 'groupstoschedule';
 
             $groupcnt = 0;
+            if ((int)$CFG->branch > 310) {
+                 $fields = \core_user\fields::for_userpic()->get_sql('u', false, '', '', false)->selects;
+            } else {
+                 $fields = \user_picture::fields('');
+            }
+
             foreach ($groupsicanschedule as $group) {
-                $members = groups_get_members($group->id, user_picture::fields('u'), 'u.lastname, u.firstname');
+                $members = groups_get_members($group->id, $fields, 'u.lastname, u.firstname');
                 if (empty($members)) {
                     continue;
                 }
